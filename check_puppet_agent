@@ -136,6 +136,7 @@ done
 # Setting HOME to ~ will kill facter
 # Puppet version unknown from /usr/lib/ruby/vendor_ruby/facter/util/config.rb:55:in `expand_path': non-absolute home (ArgumentError)
 # [ -z "$HOME" ] && export HOME=~  # Some clean environment situations make puppet -V fail.
+[ -z "$HOME" ] && export HOME=/tmp  # Some clean environment situations make puppet -V fail.
 
 # Find location of puppet executable.
 PUPPET=$(which puppet) || result 8
